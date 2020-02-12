@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "39b6de3d-21f0-4cce-ab2d-7b6e677d6dd5",
+		"name": "商场",
+		"description": "商场api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "首页",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/index",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "专题",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/topic/list?page=1&size=10",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"topic",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "分类竖着导航",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/catalog/index",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"catalog",
+						"index"
+					]
+				},
+				"description": "请求分类竖导航数据接口\n数据里面的currentCategory数据对应右边的网格布局里面的数据内容"
+			},
+			"response": []
+		},
+		{
+			"name": "分类右边对应的当前分类的数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/catalog/current?id=1005001",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"catalog",
+						"current"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1005001"
+						}
+					]
+				},
+				"description": "用来请求当前分类的列表数据"
+			},
+			"response": []
+		},
+		{
+			"name": "商品详情列表数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?categoryId=1005007&page=1&size=100",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "categoryId",
+							"value": "1005007"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "100"
+						}
+					]
+				},
+				"description": "点击商品分类右边列表中的商品，打开商品详情页"
+			},
+			"response": []
+		},
+		{
+			"name": "商品分类的顶部导航数据接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://cdwan.cn/goods/category?id=1005007",
+					"protocol": "http",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"goods",
+						"category"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1005007"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取当前分类的列表数据",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<xml>\n    <appid>wx0dc7c1fa36761c64</appid>\n    <attach>支付测试</attach>\n    <body>![CDATA[App支付测试]]</body>\n    <mch_id>1299369201</mch_id>\n    <notify_url>http://cdwan.cn:8080/wxpayreturn</notify_url>\n    <out_trade_no>2020291857AXP14T</out_trade_no>\n    <total_fee>1</total_fee>\n    <spbill_create_ip>39.96.0.38</spbill_create_ip>\n    <trade_type>APP</trade_type>\n    <sign>522FDDE2BD60AB5438EB1DD09B75E1D0C3A9257C55205657BA59337E4097BBEA</sign>\n</xml>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?id=1005008&page=1&size=100",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1005008"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "制造商详情页面数据接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/brand/detail?id=1001000",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"brand",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1001000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "制造商详情页商品列表的数据接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?brandId=1001000&page=1&size=1000",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "brandId",
+							"value": "1001000"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新品，居家等分类人气推荐详情页接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/related?id=1116011",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"related"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1116011"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

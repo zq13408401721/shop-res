@@ -229,6 +229,39 @@
 			"response": []
 		},
 		{
+			"name": "制造商品牌列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/brand/list?page=1&size=1000",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"brand",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "当前的页码"
+						},
+						{
+							"key": "size",
+							"value": "1000",
+							"description": "每页的数量"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "制造商详情页面数据接口",
 			"request": {
 				"method": "GET",
@@ -311,6 +344,338 @@
 						{
 							"key": "id",
 							"value": "1116011"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新品页面商品顶部热门商品信息",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/hot",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"hot"
+					]
+				},
+				"description": "新品商品的顶部热门商品信息"
+			},
+			"response": []
+		},
+		{
+			"name": "新品页面商品列表数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?isNew=1&page=1&size =1000&order=asc&sort=default&categoryId=0",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "isNew",
+							"value": "1",
+							"description": "是否是新品 0否 1是"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"description": "当前的页码"
+						},
+						{
+							"key": "size ",
+							"value": "1000",
+							"description": "每页的数量"
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"description": "asc升序 desc降序"
+						},
+						{
+							"key": "sort",
+							"value": "default",
+							"description": "default默认 price价格 category类别"
+						},
+						{
+							"key": "categoryId",
+							"value": "0",
+							"description": "类别Id 0全部 1居家 2餐厨 3婴童 4杂货 5饮食"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "人气推荐页面",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?isHot=1&page=1&size =1000&order=asc&sort=default&categoryId=0",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "isHot",
+							"value": "1",
+							"description": "是否热门 0否 1是"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size ",
+							"value": "1000"
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"description": "asc升序 desc降序"
+						},
+						{
+							"key": "sort",
+							"value": "default",
+							"description": "default默认 price价格 category类别"
+						},
+						{
+							"key": "categoryId",
+							"value": "0",
+							"description": "0全部 1居家 2配件 3饮食 4志趣"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "专题列表数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/topic/list",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"topic",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "专题详情数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/topic/detail?id=314",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"topic",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "314",
+							"description": "专题ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "专题详情页的专题推荐数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/topic/related?id=314",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"topic",
+						"related"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "314",
+							"description": "专题ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "专题详情页评论数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/comment/list?valueId=314&typeId=1&size=5",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"comment",
+						"list"
+					],
+					"query": [
+						{
+							"key": "valueId",
+							"value": "314",
+							"description": "非必须  专题数据的ID"
+						},
+						{
+							"key": "typeId",
+							"value": "1",
+							"description": "1专题数据"
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"description": "获取的数量"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "评论的总数",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/comment/count?valueId=314&typeId=1",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"comment",
+						"count"
+					],
+					"query": [
+						{
+							"key": "valueId",
+							"value": "314"
+						},
+						{
+							"key": "typeId",
+							"value": "1"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品评论",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "typeId",
+							"value": "1",
+							"description": "类别1",
+							"type": "text"
+						},
+						{
+							"key": "valueId",
+							"value": "314",
+							"description": "商品ID",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "评论内容",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/comment/post?",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"comment",
+						"post"
+					],
+					"query": [
+						{
+							"key": "valueId",
+							"value": "314",
+							"disabled": true
+						},
+						{
+							"key": "typeId",
+							"value": "1",
+							"disabled": true
 						}
 					]
 				}

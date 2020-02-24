@@ -681,6 +681,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "商品购买详情页",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/detail?id=1155000",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1155000"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

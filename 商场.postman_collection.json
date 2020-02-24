@@ -708,6 +708,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "商品购买详情页底部商品列表数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/related?id=1155000",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"related"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1155000"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

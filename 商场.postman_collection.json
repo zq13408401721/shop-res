@@ -418,7 +418,7 @@
 						{
 							"key": "categoryId",
 							"value": "0",
-							"description": "类别Id 0全部 1居家 2餐厨 3婴童 4杂货 5饮食"
+							"description": "类别Id 全部 居家 餐厨 婴童 杂货 饮食(每个分类里对应的ID)"
 						}
 					]
 				}
@@ -431,7 +431,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://cdwan.cn/api/goods/list?isHot=1&page=1&size =1000&order=asc&sort=default&categoryId=0",
+					"raw": "https://cdwan.cn/api/goods/list?isHot=1&page=1&size =1000&order=desc&sort=category&categoryId=1008000",
 					"protocol": "https",
 					"host": [
 						"cdwan",
@@ -458,18 +458,18 @@
 						},
 						{
 							"key": "order",
-							"value": "asc",
+							"value": "desc",
 							"description": "asc升序 desc降序"
 						},
 						{
 							"key": "sort",
-							"value": "default",
+							"value": "category",
 							"description": "default默认 price价格 category类别"
 						},
 						{
 							"key": "categoryId",
-							"value": "0",
-							"description": "0全部 1居家 2配件 3饮食 4志趣"
+							"value": "1008000",
+							"description": "全部 居家 配件 饮食 志趣 （每种分类对应的有一个ID）"
 						}
 					]
 				}
@@ -731,6 +731,130 @@
 							"key": "id",
 							"value": "1155000"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取购物车数据",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxMTA3MDh9.jfCRTkgEVWwFKTFhvRq8wDMj4-5HeKh2P9dDFcj5I0I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/index",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登录接口",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "nickname",
+						"value": "q123",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "123456",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "qq1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "注册接口",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-Type",
+						"value": "ANDROID",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nickname",
+							"value": "w123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "111111",
+							"type": "text"
+						},
+						{
+							"key": "verify",
+							"value": "1111",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
 					]
 				}
 			},

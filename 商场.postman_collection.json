@@ -526,7 +526,7 @@
 			"response": []
 		},
 		{
-			"name": "专题详情页的专题推荐数据",
+			"name": "专题详情页相关的专题推荐数据",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -855,6 +855,500 @@
 						"api",
 						"auth",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品总数",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/count",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加到购物车",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "goodsId",
+							"value": "1116033",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "productId",
+							"value": "171",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/add",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品更新",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productId",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "goodsId",
+							"value": "1009013",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "106",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/update",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"update"
+					]
+				},
+				"description": "购物车商品数量更新"
+			},
+			"response": []
+		},
+		{
+			"name": "删除购物车商品",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productIds",
+							"value": "171",
+							"description": "多个商品删除，id用逗号隔开",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/delete",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商品选择",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productIds",
+							"value": "228",
+							"description": "多个商品id以逗号隔开",
+							"type": "text"
+						},
+						{
+							"key": "isChecked",
+							"value": "0",
+							"description": "全选为0 ，非全选 1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/checked",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"checked"
+					]
+				},
+				"description": "商品选择"
+			},
+			"response": []
+		},
+		{
+			"name": "提交订单",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "addressId",
+							"value": "1",
+							"description": "地址ID",
+							"type": "text"
+						},
+						{
+							"key": "couponId",
+							"value": "1",
+							"description": "优惠券ID",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/submit",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "下单前信息确认",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdwan.cn/api/cart/checkout?addressId=1&couponId=1",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"cart",
+						"checkout"
+					],
+					"query": [
+						{
+							"key": "addressId",
+							"value": "1",
+							"description": "地址ID"
+						},
+						{
+							"key": "couponId",
+							"value": "1",
+							"description": "优惠券"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "收货地址列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdwan.cn/api/address/list",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"address",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "地址详情信息",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdwan.cn/api/address/detail?id=1",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"address",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "地址ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加地址",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "地址ID",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "北京",
+							"description": "地址名",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "13000000000",
+							"description": "电话",
+							"type": "text"
+						},
+						{
+							"key": "province_id",
+							"value": "1",
+							"description": "省份ID",
+							"type": "text"
+						},
+						{
+							"key": "city_id",
+							"value": "1",
+							"description": "城市ID",
+							"type": "text"
+						},
+						{
+							"key": "district_id",
+							"value": "1",
+							"description": "街道ID",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "xxx",
+							"description": "地址信息",
+							"type": "text"
+						},
+						{
+							"key": "is_default",
+							"value": "0",
+							"description": "0默认 ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/address/save",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"address",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除地址",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Nideshop-Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "地址ID",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cdwan.cn/api/address/delete",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"address",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取省市区的数据",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/region/list?parentId=1",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"region",
+						"list"
+					],
+					"query": [
+						{
+							"key": "parentId",
+							"value": "1",
+							"description": "对应省，市，区的ID"
+						}
 					]
 				}
 			},

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="myview">
+        <attr name="text" format="string"></attr>
+        <attr name="textColor" format="string"></attr>
+        <attr name="textSize" format="integer"></attr>
+    </declare-styleable>
+</resources>

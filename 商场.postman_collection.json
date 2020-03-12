@@ -655,7 +655,7 @@
 					]
 				},
 				"url": {
-					"raw": "https://cdwan.cn/api/comment/post?",
+					"raw": "https://cdwan.cn/api/comment/post",
 					"protocol": "https",
 					"host": [
 						"cdwan",
@@ -908,6 +908,7 @@
 						{
 							"key": "productId",
 							"value": "171",
+							"description": "商品购买页面这个接口goods/detail获取到的productList这个数据里面的ID",
 							"type": "text"
 						}
 					]
@@ -1028,6 +1029,11 @@
 						"key": "X-Nideshop-Token",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJpYXQiOjE1ODMxNjgzMDB9.aqdQNPdW8anMSqaqfAGWNPZxbb6j39tAaV-fOuzNhUM",
 						"type": "text"
+					},
+					{
+						"key": "Client-Type",
+						"value": "ANDROID",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -1042,7 +1048,7 @@
 						{
 							"key": "isChecked",
 							"value": "0",
-							"description": "全选为0 ，非全选 1",
+							"description": "选中为0 ，非选 1",
 							"type": "text"
 						}
 					]
@@ -1349,6 +1355,136 @@
 							"value": "1",
 							"description": "对应省，市，区的ID"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索页面的初始化数据接口",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://cdwan.cn/api/search/index",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"search",
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取搜索条件",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/search/helper?keyword=母亲",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"search",
+						"helper"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "母亲"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索获取商品接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/goods/list?keyword=墨镜&page=1&size=100&sort=default&order=desc&categoryId=0",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"goods",
+						"list"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "墨镜",
+							"description": "搜索关键字\n"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"description": "当前的页面"
+						},
+						{
+							"key": "size",
+							"value": "100",
+							"description": "每页的数量"
+						},
+						{
+							"key": "sort",
+							"value": "default",
+							"description": "排序类别（default:综合排序，price:价格排序）"
+						},
+						{
+							"key": "order",
+							"value": "desc",
+							"description": "desc:降序，asc:升序"
+						},
+						{
+							"key": "categoryId",
+							"value": "0",
+							"description": "categoryId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "搜索清理",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://cdwan.cn/api/search/clearhistory",
+					"protocol": "https",
+					"host": [
+						"cdwan",
+						"cn"
+					],
+					"path": [
+						"api",
+						"search",
+						"clearhistory"
 					]
 				}
 			},

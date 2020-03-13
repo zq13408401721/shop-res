@@ -5,4 +5,9 @@
         <attr name="textColor" format="string"></attr>
         <attr name="textSize" format="integer"></attr>
     </declare-styleable>
+    <declare-styleable name="myimage">
+        <attr name="mark_bg_color" format="string"></attr>
+        <attr name="mark_word_color" format="string"></attr>
+        <attr name="mark_word_size" format="integer"></attr>
+    </declare-styleable>
 </resources>

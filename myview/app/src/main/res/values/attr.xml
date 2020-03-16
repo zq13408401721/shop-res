@@ -10,4 +10,8 @@
         <attr name="mark_word_color" format="string"></attr>
         <attr name="mark_word_size" format="integer"></attr>
     </declare-styleable>
+    <declare-styleable name="mytitle">
+        <attr name="title_shared_visible" format="boolean"></attr>
+        <attr name="title_word" format="string"></attr>
+    </declare-styleable>
 </resources>

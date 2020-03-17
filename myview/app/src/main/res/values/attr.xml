@@ -14,4 +14,10 @@
         <attr name="title_shared_visible" format="boolean"></attr>
         <attr name="title_word" format="string"></attr>
     </declare-styleable>
+    <declare-styleable name="mycicle">
+        <attr name="cicle_radius" format="integer"></attr>
+        <attr name="cicle_color" format="string"></attr>
+        <attr name="cicle_loading_size" format="float"></attr>
+    </declare-styleable>
+
 </resources>

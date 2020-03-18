@@ -1,0 +1,18 @@
+normal简单协调布局使用步骤
+
+1.布局德最外层用CoordinatorLayout布局
+
+
+2.布局中包含AppBarLayout，用来存放页面的顶部内容
+
+
+3.在页面底部添加布局（如：recyclerview)
+
+
+4.设置AppBarLayout的滚动方式 如：layout_scrollFlags="scroll|exitUntilCollapsed",表示滚动到固定的最小高度，顶部的效果就停止。
+
+
+5.在AppBarLayout布局中添加组件内容。（如：布局，图片，文本，等等）。
+
+
+6.设置页面组件的layout_behavior。

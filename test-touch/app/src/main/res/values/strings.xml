@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyTouch</string>
+    <string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behavior</string>
+    <string name="title_activity_scroll_view">ScrollViewActivity</string>
+</resources>

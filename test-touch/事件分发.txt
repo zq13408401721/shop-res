@@ -1,0 +1,47 @@
+如何去分析一个知识点：
+
+1.概念
+
+2.使用场景（在哪些情况下我们会使用它）
+
+3.特点（核心）
+
+4.具体流程（核心内容）
+
+5.可能遇到的问题已经解决方案（优缺点）
+
+
+事件分发：
+
+1.概念----用户触摸屏幕所产生一系列响应事件。
+
+2.使用场景----用户和软件的交互。
+
+          ——————  状态：4种（MotionEvent.Down,MotionEvent.Move,MotionEvent.Up,MotionEvent.Cancel）
+         |
+         |
+3.特点——————————  对象：Activity,ViewGroup,View (事件的载体)
+         |
+         |
+          ——————  方法：Activity(dispatchTouchEvent--事件分发,onTouchEvent--事件消费)
+                       ViewGroup(dispatchTouchEvent--事件分发,onInterceptTouchEvent--事件拦截，onTouchEvent--事件消费)
+                       View(dispathTouchEvent--事件分发，onTouchEvent--事件消费)
+
+
+(总结的思路：总--分--总)
+4.流程————总：事件从activity开始，按事件的类型以及对象的包含关系分别去响应这个事件。
+         分：正常的情况事件的状态执行顺序：Down->Move-Up(Cancel);
+         分：正常的情况事件对象执行顺序：Activity->ViewGroup->View;
+         总：事件从Activity开始，按Activity->ViewGroup-View顺序，结合Activity，ViewGroup,View中的事件分发，事件消费以及ViewGroup事件拦截，
+            首先执行Down状态事件，查找事件的触发者和事件的消费者。接着执行Move和Up状态事件，执行顺序从Activity开始到Down状态查找出来的事件消费
+            者结束。
+
+
+5.升华 ---- 事件冲突
+
+    1.同方向的事件冲突。
+    2.不同方向的事件冲突。
+
+    解决方案：
+    1.外部拦截法
+    2.内部拦截法

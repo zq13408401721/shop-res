@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        myViewGroup = findViewById(R.id.myViewGroup);
-        myView = findViewById(R.id.myView);
+        //myViewGroup = findViewById(R.id.myViewGroup);
+        //myView = findViewById(R.id.myView);
 
        /* myViewGroup.setOnTouchListener(new View.OnTouchListener() {
             @Override

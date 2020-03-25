@@ -3,7 +3,9 @@ package com.mytouch;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -11,7 +13,12 @@ import android.widget.TextView;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class MyScrollView extends ScrollView {
 
-    public int header_height;
+    public int header_height = 400;
+
+    public MyRecyclerView recyclerView;
+
+    private float _y = 0;
+
 
     public MyScrollView(Context context) {
         super(context);
@@ -35,29 +42,41 @@ public class MyScrollView extends ScrollView {
     }
 
     private void init(){
-
+        int child = getChildCount();
+        Log.i("Child", String.valueOf(child));
     }
 
-    /**
-     * 在该方法中进行判断
-     */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
+        boolean intercept = false;
+        float nowY = ev.getY();
+        switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_UP:
+                intercept = false;
                 break;
             case MotionEvent.ACTION_MOVE:
-                float scrolly = this.getScrollY();
-                if(scrolly <= header_height){
-                    return true;
+                if(recyclerView != null && recyclerView.isTop()){
+                    if(Math.abs(nowY) < _y){ //上拉
+                        if(getScrollY() >= header_height){
+                            scrollTo(0,header_height);
+                            //recyclerView.dispatchTouchEvent(ev);
+                            intercept = true;
+                        }else{
+                            intercept = super.onInterceptTouchEvent(ev);
+                        }
+                    }else{
+                        intercept = false;
+                    }
                 }
-            default:
                 break;
         }
-        return super.onInterceptTouchEvent(ev);
+        _y = ev.getY();
+        return intercept;
     }
 
-   /* @Override
+
+    /* @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         float scrolly = this.getScrollY();
         if(scrolly <= header_height){

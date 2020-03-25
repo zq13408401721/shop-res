@@ -32,8 +32,8 @@ public class ScrollViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scroll_view);
         recyclerView = findViewById(R.id.recyclerview);
         txt_header = findViewById(R.id.txt_header);
-        scrollView = findViewById(R.id.scrollView);
-        scrollView.header_height = txt_header.getLayoutParams().height;
+        /*scrollView = findViewById(R.id.scrollView);
+        scrollView.header_height = txt_header.getLayoutParams().height;*/
 
         list = new ArrayList<>();
         for(int i=0; i<50;i++){

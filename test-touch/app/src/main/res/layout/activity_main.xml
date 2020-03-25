@@ -9,14 +9,14 @@
     tools:context=".MainActivity">
 
     <com.mytouch.views.MyViewGroup
-        android:id="@+id/myViewGroup"
+        android:id="@+id/myVG"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="10dp"
         android:background="@color/colorPrimary">
         <com.mytouch.views.MyView
-            android:id="@+id/myView"
+            android:id="@+id/myVW"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorAccent"/>

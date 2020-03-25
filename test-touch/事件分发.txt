@@ -45,3 +45,8 @@
     解决方案：
     1.外部拦截法
     2.内部拦截法
+
+
+    内部拦截发的处理步骤：
+    1.在外边容器中重写onInterceptTouchEvent-->down状态-->不拦截处理 （还原事件的拦截状态）
+    2.在子对象中重写dispathTouchEvent

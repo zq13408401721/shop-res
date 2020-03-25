@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mytouch.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NestedScrollViewActivity"
+    android:id="@+id/view_scroll">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt_header"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#888888"
+            android:gravity="center_horizontal"
+            android:text="header"
+            android:textColor="#0000ff"
+            android:textSize="30sp"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#ffffff">
+            </TextView>
+        </LinearLayout>
+        <com.mytouch.MyRecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.mytouch.MyRecyclerView>
+    </LinearLayout>
+
+</com.mytouch.MyScrollView>

@@ -124,7 +124,7 @@ public class MyViewGroup extends ViewGroup {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         MyUtils.show_events(TAG,ev,"onInterceptTouchEvent");
-        return false;
+        return super.onInterceptTouchEvent(ev);
         //return super.onInterceptTouchEvent(ev);
     }
 

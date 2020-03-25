@@ -6,30 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ScrollViewActivity">
 
-    <com.mytouch.MyScrollView
+    <com.mytouch.views.MyNestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/txt_header"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:text="header高度200dp"
-                android:background="@color/colorAccent"/>
+                android:background="@color/colorAccent"
+                android:text="header高度200dp" />
+
             <TextView
+                android:id="@+id/txt_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
-                android:text="标题"/>
-            <com.mytouch.MyRecyclerView
+                android:text="标题" />
+
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></com.mytouch.MyRecyclerView>
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
-    </com.mytouch.MyScrollView>
+    </com.mytouch.views.MyNestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

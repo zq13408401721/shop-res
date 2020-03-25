@@ -33,26 +33,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        //myViewGroup = findViewById(R.id.myViewGroup);
-        //myView = findViewById(R.id.myView);
+        myViewGroup = findViewById(R.id.myVG);
+        myView = findViewById(R.id.myVW);
 
-       /* myViewGroup.setOnTouchListener(new View.OnTouchListener() {
+        myViewGroup.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return true;
             }
-        });*/
+        });
 
-        /*myViewGroup.setOnClickListener(new View.OnClickListener() {
+        myViewGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("click","onclick");
             }
-        });*/
+        });
 
         myView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.getId();
                 Log.i("view click","click");
             }
         });
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         MyUtils.show_events(TAG,ev,"dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);
-        //return true
+        //return false;
     }
 
     @Override

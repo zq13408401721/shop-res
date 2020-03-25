@@ -42,7 +42,7 @@ public class MyView extends View {
     public boolean dispatchTouchEvent(MotionEvent event) {
         MyUtils.show_events(TAG,event,"dispatchTouchEvent");
         //return super.dispatchTouchEvent(event);
-        return false;
+        return true;
     }
 
     @Override

@@ -23,7 +23,7 @@ public class MyLinearLayout extends LinearLayout {
     }
 
     /**
-     * 设置在Down状态不拦截事件
+     * 设置在Down状态不拦截事件 还原事件的拦截状态
      * @param ev
      * @return
      */

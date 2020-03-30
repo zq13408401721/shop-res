@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="standard模式"></Button>
+
+    <Button
+        android:id="@+id/btn_singleTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleTop模式"></Button>
+
+    <Button
+        android:id="@+id/btn_singleTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleTask模式"></Button>
+
+    <Button
+        android:id="@+id/btn_singleInstance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleInstance模式"></Button>
+
+    <Button
+        android:id="@+id/btn_openInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开InfoActivity"></Button>
+
+</LinearLayout>

@@ -1,0 +1,2 @@
+include ':app', ':myservice'
+rootProject.name='MyLaunchMode'

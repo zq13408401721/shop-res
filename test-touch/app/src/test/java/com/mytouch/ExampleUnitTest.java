@@ -1,5 +1,9 @@
 package com.mytouch;
 
+import com.mytouch.abstracts.ChickenGame;
+import com.mytouch.abstracts.ChildView;
+import com.mytouch.abstracts.WangZheGame;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -27,5 +31,14 @@ public class ExampleUnitTest {
             System.out.print("is false");
         }
 
+    }
+
+
+    @Test
+    public void testFun(){
+        //王者的游戏
+        WangZheGame wzGame = new WangZheGame();
+        //吃鸡的游戏
+        ChickenGame chickenGame = new ChickenGame();
     }
 }

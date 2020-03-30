@@ -9,6 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+        <com.mytouch.views.MyLineView
+            android:layout_width="100dp"
+            android:layout_height="300dp"></com.mytouch.views.MyLineView>
         <com.mytouch.views.MyRecyclerView
             android:id="@+id/recyclerview_left"
             android:layout_width="900dp"

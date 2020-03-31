@@ -53,7 +53,7 @@ public class StandardService extends Service {
 
         public void showInfo(){
             Intent intent = new Intent(context, InfoActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  //intent->Activity需要设置flag为FLAG_ACTIVITY_NEW_TASK
+            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  //intent->Activity需要设置flag为FLAG_ACTIVITY_NEW_TASK
             startActivity(intent);
         }
     }

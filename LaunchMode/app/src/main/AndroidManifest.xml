@@ -9,8 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InstanceActivity"
-            android:launchMode="singleInstance"></activity>
+        <activity android:name=".NoHistroyActivity"></activity>
+        <activity android:name=".BroadCastActivity" />
+        <activity android:name=".FlagActivity" />
+        <activity
+            android:name=".NewTaskActivity"
+            android:allowTaskReparenting="true"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".SingleTopActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".InstanceActivity"
+            android:launchMode="singleInstance" />
         <activity
             android:name=".PayActivity"
             android:launchMode="singleInstance" />

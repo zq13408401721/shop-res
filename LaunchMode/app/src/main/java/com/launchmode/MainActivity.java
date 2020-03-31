@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_singleInstance;
 
     Button btn_openInfo;
+    Button btn_openReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_singleTask = findViewById(R.id.btn_singleTask);
         btn_singleInstance = findViewById(R.id.btn_singleInstance);
         btn_openInfo = findViewById(R.id.btn_openInfo);
+        btn_openReceiver = findViewById(R.id.btn_openReceiver);
 
         btn_standard.setOnClickListener(this);
         btn_singleTop.setOnClickListener(this);
         btn_singleTask.setOnClickListener(this);
         btn_singleInstance.setOnClickListener(this);
         btn_openInfo.setOnClickListener(this);
+        btn_openReceiver.setOnClickListener(this);
 
         MyUtils.print(TAG,"onCreate");
         MyUtils.print(TAG,"task stack id:"+getTaskId());
@@ -87,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_singleTop:
+                Intent intent_singletop = new Intent(MainActivity.this,SingleTopActivity.class);
+                startActivity(intent_singletop);
                 break;
             case R.id.btn_singleTask:
                 Intent intent_in = new Intent(MainActivity.this,InstanceActivity.class);
@@ -99,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_openInfo:
                 Intent intent_info = new Intent(MainActivity.this,InfoActivity.class);
                 startActivity(intent_info);
+                break;
+            case R.id.btn_openReceiver:
+                Intent intent_receiver = new Intent(MainActivity.this,BroadCastActivity.class);
+                startActivity(intent_receiver);
                 break;
         }
     }

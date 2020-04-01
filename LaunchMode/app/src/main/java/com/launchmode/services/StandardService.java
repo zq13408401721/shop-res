@@ -5,11 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.launchmode.BroadCastActivity;
 import com.launchmode.InfoActivity;
 
 /**
@@ -23,11 +27,15 @@ public class StandardService extends Service {
 
     private Context context;
 
+
+    LocalBroadcastManager localBroadcastManager;
+
     @Override
     public void onCreate() {
         Log.i(TAG,"onCreate"+Thread.currentThread().getId());
         super.onCreate();
         context = getBaseContext();
+        localBroadcastManager = LocalBroadcastManager.getInstance(context);
     }
 
     @Override
@@ -58,6 +66,14 @@ public class StandardService extends Service {
             Intent intent = new Intent(context, InfoActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  //intent->Activity需要设置flag为FLAG_ACTIVITY_NEW_TASK
             startActivity(intent);
+        }
+
+        @Override
+        public void sendBroadCastMsg() {
+            Intent intent = new Intent();
+            intent.setAction(BroadCastActivity.NOTIFICATION_ACTION);
+            intent.putExtra("msg","来至Service的消息");
+            localBroadcastManager.sendBroadcast(intent);
         }
 
         ICallback cb;
@@ -104,6 +120,9 @@ public class StandardService extends Service {
         void download();
         void setCallback(ICallback callback);
         void showInfo();
+
+        //发送消息到广播
+        void sendBroadCastMsg();
     }
 
     /**

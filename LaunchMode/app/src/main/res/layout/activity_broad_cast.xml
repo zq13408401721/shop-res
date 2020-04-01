@@ -9,6 +9,13 @@
     tools:context=".BroadCastActivity">
 
     <Button
+        android:id="@+id/btn_sendNormalMyBroadCast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送消息到MyBroadCast"></Button>
+
+
+    <Button
         android:id="@+id/btn_sendBroadCast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

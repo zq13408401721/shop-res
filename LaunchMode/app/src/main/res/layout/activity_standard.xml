@@ -23,11 +23,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="开始下载"></Button>
+
     <TextView
         android:id="@+id/txt_down_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="下载进度：0%"/>
+
+    <Button
+        android:id="@+id/btn_sendBroadCast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sendBroadCast">
+    </Button>
+
+    <TextView
+        android:id="@+id/txt_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
 
     <Button
         android:id="@+id/btn_unbind"

@@ -1,9 +1,13 @@
 package com.launchmode;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -29,6 +33,12 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
     Button btnOpenNoHistroy;
     TextView txt_progress;
     Button btnDown;
+    Button btnSendBroadCast;
+    TextView txtBroadCast;
+
+    MsgReceiver msgReceiver;
+
+    LocalBroadcastManager localBroadcastManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +46,8 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_standard);
         initView();
         Log.i(TAG,"TaskId:"+getTaskId());
+        localBroadcastManager = LocalBroadcastManager.getInstance(this);
+        registerBroadCast();
     }
 
     //用来实现activity和service交互
@@ -72,6 +84,8 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
         txt_progress = findViewById(R.id.txt_down_progress);
         btnOpenNoHistroy = findViewById(R.id.btn_openNoHistroy);
         btnDown = findViewById(R.id.btn_startDown);
+        btnSendBroadCast = findViewById(R.id.btn_sendBroadCast);
+        txtBroadCast = findViewById(R.id.txt_broadcast);
         btnBind.setOnClickListener(this);
         btnCall.setOnClickListener(this);
         btnUnbind.setOnClickListener(this);
@@ -79,6 +93,7 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
         btnOther.setOnClickListener(this);
         btnOpenNoHistroy.setOnClickListener(this);
         btnDown.setOnClickListener(this);
+        btnSendBroadCast.setOnClickListener(this);
     }
 
     @Override
@@ -93,6 +108,9 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_startDown:
                 standardBinder.download();
+                break;
+            case R.id.btn_sendBroadCast:
+                standardBinder.sendBroadCastMsg();
                 break;
             case R.id.btn_unbind:
                 unbindService(connection);
@@ -118,9 +136,30 @@ public class StandardActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    //注册广播
+    private void registerBroadCast(){
+        msgReceiver = new MsgReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(BroadCastActivity.NOTIFICATION_ACTION);
+        localBroadcastManager.registerReceiver(msgReceiver,intentFilter);
+    }
+
+    //接收广播的内部类
+    class MsgReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getAction().equals(BroadCastActivity.NOTIFICATION_ACTION)){
+                String str = intent.getStringExtra("msg");
+                txtBroadCast.setText(str);
+            }
+        }
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        localBroadcastManager.unregisterReceiver(msgReceiver);
         if(connection != null){
             unbindService(connection);
         }

@@ -36,6 +36,41 @@
         </activity>
 
         <service android:name=".services.StandardService" />
+
+        <receiver android:name=".broadcast.NotificationReceiver">
+            <intent-filter>
+                <action android:name="com.launchmode.receiver"/>
+            </intent-filter>
+        </receiver>
+
+        <!--启动mybroadcast广播-->
+        <receiver android:name=".broadcast.MyBroadCast">
+            <intent-filter>
+                <action android:name="com.launchmode.mybroadcast"></action>
+            </intent-filter>
+        </receiver>
+
+        <!--启动有序广播-->
+        <receiver android:name=".broadcast.OneBroadCast">
+            <intent-filter android:priority="1000">
+                <action android:name="com.launchmode.orderbroadcast"></action>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".broadcast.TwoBroadCast"
+            android:process=":two">
+            <intent-filter android:priority="900">
+                <action android:name="com.launchmode.orderbroadcast"></action>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".broadcast.ThreeBroadCast">
+            <intent-filter android:priority="800">
+                <action android:name="com.launchmode.orderbroadcast"></action>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
